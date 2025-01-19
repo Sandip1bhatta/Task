@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: blanchedalmond;
+    overflow: hidden;
+}
+
+.main-box {
+    max-width: 350px;
+    width: 100%;
+    background-color: pink;
+    padding: 15px;
+    border-radius: 12px;
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform-origin: center center;
+    transform: scale(0.8) translateY(50px); /* Default size and position */
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.main-box.center {
+    transform: scale(1.2) translateY(0); /* Center box size and position */
+    opacity: 1;
+    z-index: 2; /* Bring to front */
+}
+
+.main-box.above {
+    transform: scale(0.9) translateY(-95%); /* 20% overlap */
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.main-box.below {
+    transform: scale(0.9) translateY(95%); /* 20% overlap */
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.box1 {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(184, 1, 31);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.box2 {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+}
+
+.box2 .circle {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(184, 1, 31);
+    border-radius: 50%;
+}
+
+.box2 .details {
+    margin-left: 20px;
+}
+.details span {
+    display: block;
+    background-color: rgb(184, 1, 31);
+    border-radius: 5px;
+}
+.details .name {
+    height: 10px;
+    width: 250px;
+}
+.details .about {
+    height: 10px;
+    width: 150px;
+    margin-top: 10px;
+}
+.main-box.hidden {
+    transform: scale(0.8) translateY(50px);
+    opacity: 0.5;
+    z-index: 0;
+}
